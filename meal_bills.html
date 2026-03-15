@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anika HRM</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" />
+    <link rel="stylesheet" href="meal.bills.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+      <script src="https://kit.fontawesome.com/26eea4c998.js" crossorigin="anonymous"></script>
+      <script src="https://kit.fontawesome.com/26eea4c998.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="header-title">Employee Meal Portal</div>
+        <div class="help-icon">      
+            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke="#ff5400" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:2.5vw;height: 2.5vw;">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+  </div>
+    </div>
+    
+    <div class="sidebar">
+        <div class="logo-container">
+            <img class="logo-1-icon18" alt="" src="https://ik.imagekit.io/jxuol7kjt/logo-12@2x.png?updatedAt=1740831644868" />
+            <div class="logo-text">Anika <span>HRM</span></div>
+        </div>
+          <div style="visibility:hidden">
+        <div class="my-view">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path>
+            <polygon points="12 15 17 21 7 21 12 15"></polygon>
+          </svg>
+            HR View
+        </div>
+        <div class="my-view">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path>
+            <polygon points="12 15 17 21 7 21 12 15"></polygon>
+          </svg>
+            Manager View
+        </div>
+             </div>
+        <div class="menu-item" onclick="window.location.href='../emp_dash.php'">
+           <img src="https://hrms.anikasterilis.com/public/vector3.svg" alt="">
+            Dashboard
+        </div>
+        
+       
+        
+        <div class="menu-item" onclick="window.location.href='../../apply-leave-emp.php'">
+            <img src="https://hrms.anikasterilis.com/emp_public/vector2.svg" alt="">
+            Leaves
+        </div>
+        
+        
+        
+        <div class="menu-item " onclick="window.location.href='../../attendenceemp2.php'">
+            <img src="https://hrms.anikasterilis.com/emp_public/vector4.svg" alt="">
+            Attendance
+        </div>
+        <div class="menu-item" onclick="window.location.href='../../card.php'">
+            <img src="https://hrms.anikasterilis.com/emp_public/arcticonsgooglepay2.svg" alt="">
+            Directory
+        </div>
+        
+        <div class="menu-item" onclick="window.location.href='../../module_transition_emp-policies/index.php?target=https://hrms.anikasterilis.com/emppolicy/emppolicy.php'">
+            <img src="https://hrms.anikasterilis.com/emp_public/streamlineinterfacecontentchartproductdataanalysisanalyticsgraphlinebusinessboardchart1.svg" alt="">
+            Policies
+        </div>
+
+        <div class="menu-item active menu-with-submenu">
+    <div class="main-menu-item" >
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"></path>
+            <polyline points="3 12 8 12 10 15 14 9 16 12 21 12"></polyline>
+        </svg>
+        Health & Wellness
+        <svg xmlns="http://www.w3.org/2000/svg" style="margin-right:0" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right h-4 w-4 text-white"><path d="m9 18 6-6-6-6"></path></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" style="margin-right:0" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 text-white"><path d="m6 9 6 6 6-6"></path></svg>
+    </div>
+    
+    <!-- Submenu for Health & Wellness -->
+    <div class="submenu">
+        <div class="submenu-item" onclick="window.location.href='../health.php'">
+            <span class="submenu-icon">→</span>
+            Health Profile
+        </div>
+        <div class="submenu-item" onclick="window.location.href='order.php'">
+            <span class="submenu-icon">→</span>
+            Meal Portal
+        </div>
+    </div>
+</div>
+        
+        
+        <div class="logout">
+          <img src="https://hrms.anikasterilis.com/emp_public/group2.svg" alt="">
+          <p>Logout</p>
+        </div>
+    </div>
+    
+     
+    <div class="container">
+        <div class="header1">
+            <h1>Your Meal Bills</h1>
+            <p>View and manage your meal  bills</p>
+        </div>
+
+        <div class="alert-info">
+            <div class="icon"><i class="fas fa-info-circle info-icon"></i>Payment Policy</div>
+            <p>All meal bills must be cleared within 3 days of generation. Any unpaid bills after this period will be automatically deducted from your salary.</p>
+        </div>
+
+        
+
+        <div class="search-filter">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="Search bills...">
+            </div>
+            <div class="filter-dropdown">
+                <button class="filter-btn" onclick="toggleDropdown()" id="selectedStatus">
+                  <i class="fas fa-filter filter-icon"></i>
+                  <span>All Status</span>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content" id="statusDropdown">
+                  <div class="dropdown-item selected" onclick="selectStatus(this)">All Status</div>
+                  <div class="dropdown-item" onclick="selectStatus(this)">Due</div>
+                  <div class="dropdown-item" onclick="selectStatus(this)">Paid</div>
+                  <div class="dropdown-item" onclick="selectStatus(this)">Failed</div>
+                  <div class="dropdown-item" onclick="selectStatus(this)">Deferred</div>
+                </div>
+              </div>
+              
+              
+              
+        </div>
+        <div class="bill-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Bill ID</th>
+                    <th>Month</th>
+                    <th>Amount</th>
+                    <th>Meals</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>BILL-2025-04-01</td>
+                    <td>April 2025</td>
+                    <td>₹1500.00</td>
+                    <td>22 meals</td>
+                    <td><span class="status due">Due</span></td>
+                    <td class="action-buttons">
+                        <button class="action-btn details-btn" data-bill="BILL-2025-04-01">
+                            <i class="fas fa-eye"></i> Details
+                        </button>
+                        <button class="pay-btn">
+                            <i class="fas fa-credit-card"></i> Pay
+                        </button>
+                       
+                    </td>
+                </tr>
+                <tr>
+                    <td>BILL-2025-03-15</td>
+                    <td>March 2025 (Additional)</td>
+                    <td>₹500.00</td>
+                    <td>7 meals</td>
+                    <td><span class="status failed">Failed</span></td>
+                    <td class="action-buttons">
+                        <button class="action-btn details-btn" data-bill="BILL-2025-03-15">
+                            <i class="fas fa-eye"></i> Details
+                        </button>
+                        <button class="pay-btn">
+                            <i class="fas fa-credit-card"></i> Pay
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>BILL-2025-03-01</td>
+                    <td>March 2025</td>
+                    <td>₹1500.00</td>
+                    <td>23 meals</td>
+                    <td><span class="status paid">Paid</span></td>
+                    <td class="action-buttons">
+                        <button class="action-btn details-btn" data-bill="BILL-2025-03-01">
+                            <i class="fas fa-eye"></i> Details
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>BILL-2025-02-01</td>
+                    <td>February 2025</td>
+                    <td>₹1350.00</td>
+                    <td>20 meals</td>
+                    <td><span class="status paid">Paid</span></td>
+                    <td class="action-buttons">
+                        <button class="action-btn details-btn" data-bill="BILL-2025-02-01">
+                            <i class="fas fa-eye"></i> Details
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>BILL-2025-01-01</td>
+                    <td>January 2025</td>
+                    <td>₹1500.00</td>
+                    <td>22 meals</td>
+                    <td><span class="status paid">Paid</span></td>
+                    <td class="action-buttons">
+                        <button class="action-btn details-btn" data-bill="BILL-2025-01-01">
+                            <i class="fas fa-eye"></i> Details
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>BILL-2024-12-01</td>
+                    <td>December 2024</td>
+                    <td>₹1350.00</td>
+                    <td>20 meals</td>
+                    <td><span class="status paid">Paid</span></td>
+                    <td class="action-buttons">
+                        <button class="action-btn details-btn" data-bill="BILL-2024-12-01">
+                            <i class="fas fa-eye"></i> Details
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>BILL-2024-11-01</td>
+                    <td>November 2024</td>
+                    <td>₹1500.00</td>
+                    <td>22 meals</td>
+                    <td><span class="status paid">Paid</span></td>
+                    <td class="action-buttons">
+                        <button class="action-btn details-btn" data-bill="BILL-2024-11-01">
+                            <i class="fas fa-eye"></i> Details
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+    <!-- Bill Details Modal -->
+    <div id="detailsModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Bill Details</h2>
+                <p>Detailed information for April 2025 meal bill</p>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="bill-info">
+                    <div class="bill-info-row">
+                        <span class="bill-label">Bill ID</span>
+                        <span class="bill-value">BILL-2025-04-01</span>
+                    </div>
+                    <div class="bill-info-row">
+                        <span class="bill-label">Month</span>
+                        <span class="bill-value">April 2025</span>
+                    </div>
+                    <div class="bill-info-row">
+                        <span class="bill-label">Amount</span>
+                        <span class="bill-value">₹1500.00</span>
+                    </div>
+                    <div class="bill-info-row">
+                        <span class="bill-label">Status</span>
+                        <span class="bill-value"  id="statusValue">Due</span>
+                    </div>
+                    <div class="bill-info-row">
+                        <span class="bill-label">Total Meals</span>
+                        <span class="bill-value">22 meals</span>
+                    </div>
+                    <div class="bill-info-row">
+                        <span class="bill-label">Per Meal Cost</span>
+                        <span class="bill-value">₹68.18</span>
+                    </div>
+                </div>
+
+                <div class="payment-due">
+                    <div class="payment-due-header">
+                        <i class="fas fa-exclamation-circle"></i>
+                        Payment Due
+                    </div>
+                    <div class="due-div" id="due-div-info">
+                        <div class="due-info-row">
+                            <span class="bill-label">Due Date</span>
+                            <span class="bill-value">2025-05-05</span>
+                        </div>
+                        <div class="due-info-row">
+                            <span class="bill-label">Amount Due</span>
+                            <span class="bill-value">₹1500.00</span>
+                        </div>
+                    </div>
+                    <div class="due-div" id="due-div-fail-info">
+                        <div class="due-info-row">
+                            <span class="bill-label">Failure Reason</span>
+                            <span class="bill-value">Payment gateway timeout</span>
+                        </div>
+                        <p style="border-top:1px solid rgb(185 28 28 ); padding-top:1vh;"><b>Note:</b> Please make the payment within 3 days to avoid automatic salary deduction.</p>
+                    </div>
+                    
+                    <p id="pay-due-font">Important: This bill must be paid within 3 days of generation to avoid automatic salary deduction.</p>
+                    <p id="pay-due-font">As per company policy, all unpaid meal bills will be automatically deducted from your next salary if not cleared within the specified timeframe.</p>
+                    <div class="due-div" id="payment-status">
+                        <div class="due-info-row">
+                            <span class="bill-label">Transaction ID</span>
+                            <span class="bill-value">TXN762145</span>
+                        </div>
+                        <div class="due-info-row">
+                            <span class="bill-label">Receipt Status</span>
+                            <span class="bill-value">Available</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="payment-policy">
+                    <div class="payment-policy-header">
+                        <i class="fas fa-info-circle"></i>
+                        Payment Policy
+                    </div>
+                    <p>All meal bills must be cleared within 3 days of generation. Any unpaid bills after this period will be automatically deducted from your salary.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-close">Close</button>
+                <button class="btn-pay" id="payNowBtn">
+                    <i class="fas fa-credit-card"></i>
+                    Pay Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Pay Meal Bill</h2>
+                <p>Choose your preferred payment method for April 2025</p>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="bill-info">
+                    <div class="bill-info-row">
+                        <span class="bill-label">Bill ID:</span>
+                        <span class="bill-value">BILL-2025-04-01</span>
+                    </div>
+                    <div class="bill-info-row">
+                        <span class="bill-label">Month:</span>
+                        <span class="bill-value">April 2025</span>
+                    </div>
+                    <div class="bill-info-row">
+                        <span class="bill-label">Amount Due:</span>
+                        <span class="bill-value">₹1500.00</span>
+                    </div>
+                    <div class="bill-info-row">
+                        <span class="bill-label">Due Date:</span>
+                        <span class="bill-value">2025-05-05</span>
+                    </div>
+                </div>
+
+                <div class="payment-option" data-method="upi">
+                    <input type="radio" name="paymentMethod" id="upiMethod">
+                    <div class="payment-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <div class="payment-details">
+                        <h3>Pay via UPI</h3>
+                        <p>Make an instant payment using UPI</p>
+                    </div>
+                </div>
+
+                <div class="payment-option" data-method="salary">
+                    <input type="radio" name="paymentMethod" id="salaryMethod">
+                    <div class="payment-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <div class="payment-details">
+                        <h3>Deduct from Salary</h3>
+                        <p>Amount will be deducted from your next salary</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-close">Cancel</button>
+                <button class="btn-proceed" id="proceedBtn" disabled>Proceed to Payment</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get DOM elements
+        const detailsButtons = document.querySelectorAll('.details-btn');
+        const payButtons = document.querySelectorAll('.pay-btn');
+        const detailsModal = document.getElementById('detailsModal');
+        const paymentModal = document.getElementById('paymentModal');
+        const closeButtons = document.querySelectorAll('.modal-close, .btn-close');
+        const payNowBtn = document.getElementById('payNowBtn');
+        const paymentOptions = document.querySelectorAll('.payment-option');
+        const proceedBtn = document.getElementById('proceedBtn');
+        const statusValue = document.getElementById('statusValue');
+
+
+        const paymentinformtaion =document.getElementById('payment-status');
+        const paymentDueHeader = document.querySelector('.payment-due-header');
+        const paymentDueDiv = document.querySelector('.payment-due');
+        const payNowButton = document.getElementById('payNowBtn');
+        const duedivinfo=document.getElementById('due-div-info');
+        const duedivfailinfo=document.getElementById('due-div-fail-info');
+        
+        // Show details modal
+        detailsButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                        
+                const row = button.closest('tr');
+                const statusText = row.querySelector('.status').textContent.trim().toLowerCase();
+                document.querySelectorAll('.due-info-row').forEach(dueDiv => {
+                    dueDiv.style.marginTop = '0vh';
+                });
+                paymentDueHeader.innerHTML = '<i class="fas fa-exclamation-circle"></i> Payment Due'; // You can update the icon and text
+                paymentDueHeader.style.color = '';
+                paymentDueDiv.style.backgroundColor = '';
+                paymentDueDiv.style.border='';
+                payNowButton.innerHTML = `
+                    <i class="fas fa-credit-card"></i>
+                    Pay Now
+                `;
+                duedivfailinfo.style.display="none";
+                duedivinfo.innerHTML='<div class="due-info-row">  <span class="bill-label">Due Date</span> <span class="bill-value">2025-05-05</span> </div> <div class="due-info-row"> <span class="bill-label">Amount Due</span> <span class="bill-value">₹1500.00</span> </div>';
+                if (statusText === 'paid') {
+                    statusValue.textContent = 'Paid';
+                    paymentinformtaion.style.display = 'flex';
+                    paymentDueHeader.innerHTML = '<i class="fas fa-check-circle"></i> Payment Completed'; // You can update the icon and text
+                    paymentDueHeader.style.color = 'rgb(22, 101, 52)'; 
+                    paymentDueDiv.style.backgroundColor = 'rgb(240 253 244 )';
+                    paymentDueDiv.style.border='1px solid rgb(22, 101, 52)';
+                    payNowButton.innerHTML = `
+                        <i class="fas fa-download"></i>
+                        Download Receipt
+                    `;
+                    document.querySelectorAll('.due-info-row').forEach(dueDiv => {
+                        dueDiv.style.marginTop = '1vh';
+                    });
+                    document.querySelectorAll('#pay-due-font').forEach(el => {
+                        el.style.display = 'none';
+                    });
+                } else if (statusText === 'failed') {
+                    statusValue.textContent = 'Failed';
+                    paymentinformtaion.style.display = 'none';
+                    duedivinfo.innerHTML='<div class="due-info-row">  <span class="bill-label">Attempted On</span> <span class="bill-value">2025-03-20</span> </div> <div class="due-info-row"> <span class="bill-label">Transaction ID</span> <span class="bill-value">TXN583921</span> </div>';
+                    paymentDueHeader.innerHTML = '<i class="fas fa-exclamation-circle"></i> Payment Failed'; // You can update the icon and text
+                    document.querySelectorAll('#pay-due-font').forEach(el => {
+                        el.style.display = 'block';
+                    });
+                    document.querySelectorAll('#pay-due-font').forEach(el => {
+                        el.style.display = 'none';
+                    });
+                    
+                duedivfailinfo.style.marginTop='1vh';
+                duedivfailinfo.style.flexDirection='column';
+                duedivfailinfo.style.display='';
+                } else if (statusText === 'due') {
+                    statusValue.textContent = 'Due';
+                    paymentinformtaion.style.display = 'none';
+                    document.querySelectorAll('#pay-due-font').forEach(el => {
+                        el.style.display = 'block';
+                    });
+                } 
+                detailsModal.style.display = 'flex';
+            });
+        });
+
+        // Show payment modal
+        payButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                paymentModal.style.display = 'flex';
+            });
+        });
+
+        // Close any open modal
+        closeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                detailsModal.style.display = 'none';
+                paymentModal.style.display = 'none';
+            });
+        });
+
+        // Pay Now button in details modal opens payment modal
+        payNowBtn.addEventListener('click', () => {
+            detailsModal.style.display = 'none';
+            paymentModal.style.display = 'flex';
+        });
+
+        // Click outside modal to close
+        window.addEventListener('click', (event) => {
+            if (event.target === detailsModal) {
+                detailsModal.style.display = 'none';
+            }
+            if (event.target === paymentModal) {
+                paymentModal.style.display = 'none';
+            }
+        });
+
+        // Handle payment option selection
+        paymentOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                // Reset all options
+                paymentOptions.forEach(opt => {
+                    opt.classList.remove('selected');
+                    opt.querySelector('input[type="radio"]').checked = false;
+                });
+                
+                // Select current option
+                option.classList.add('selected');
+                option.querySelector('input[type="radio"]').checked = true;
+                
+                // Enable proceed button
+                proceedBtn.disabled = false;
+            });
+        });
+     
+
+        function toggleDropdown() {
+  document.getElementById("statusDropdown").classList.toggle("show");
+}
+
+function selectStatus(element) {
+  // Remove 'selected' from all items
+  document.querySelectorAll('.dropdown-item').forEach(item => {
+    item.classList.remove('selected');
+  });
+
+  // Add 'selected' to clicked item
+  element.classList.add('selected');
+
+  // Update button text
+  document.querySelector("#selectedStatus span").textContent = element.textContent;
+
+  // Hide dropdown
+  document.getElementById("statusDropdown").classList.remove("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.closest('.filter-dropdown')) {
+    document.getElementById("statusDropdown").classList.remove("show");
+  }
+};
+
+
+        
+    </script>
+       
+   
+
+
+   
+
+        
+
+       
+</body>
+</html>
